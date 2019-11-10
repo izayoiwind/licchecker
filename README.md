@@ -1,4 +1,4 @@
-licchecker.js
+licchecker
 ===
 npm install（もしくはyarn install）でインストールしたライブラリのライセンスの整理をちょっと楽にするために適当に作ったツールです。
 
@@ -6,7 +6,7 @@ npm install（もしくはyarn install）でインストールしたライブラ
 
 使い方
 ---
-license-checkで出力したJSONをlicchecker.jsに読み込ませます。とりあえず整理したら書きます。
+license-checkerで出力したJSONをlicchecker.jsに読み込ませます。とりあえず整理したら書きます。
 
 ライセンス
 ---
