@@ -1,0 +1,14 @@
+{
+    "name": "licchecker",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {},
+    "bin": {
+        "licchecker": "./licchecker.js"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "license-checker": "^25.0.1"
+    }
+  }
+  
