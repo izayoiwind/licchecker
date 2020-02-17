@@ -63,7 +63,7 @@ licenses.jsonに著作権表記が含まれていない等、警告が出る場�
         "licenses": "ライセンス種別 ※2",
         "licensesOrigin": "licenses.jsonに記載のライセンス種別",
         "copyright": "著作権情報",
-		"ignore": 出力対象としない場合はtrue、それ以外は定義しないまたはfalse,
+        "ignore": 出力対象としない場合はtrue、それ以外は定義しないまたはfalse,
         "licenseText": "ライセンス条文"
     }
 }
