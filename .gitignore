@@ -1,3 +1,6 @@
 licenses.json
 licenses_out.json
 .vscode
+known.json
+node_modules
+yarn.lock
