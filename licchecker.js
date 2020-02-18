@@ -177,7 +177,10 @@ try {
         const name = inputLicensesData.name
         const version = inputLicensesData.version
         const inputDataLicenseType = inputLicensesData.licenses
+        let copyright = inputLicensesData.copyright
         let licenseType = inputLicensesData.licenses
+        // ライセンスファイルのスペルが2種類存在するので、両方とも処理対象に含める。
+        let licenseText = inputLicensesData.licenseFile.match(/LICENSE/ig) || inputLicensesData.licenseFile.match(/LICENCE/ig) ? inputLicensesData.licenseText : null
         // 既知ライセンス情報が存在する場合は取得する。
         let knownLicensesData = knownLicensesDictionary[name]
         if (!knownLicensesData) {
@@ -188,10 +191,8 @@ try {
             // 既知ライセンス情報に存在し、かつlicensesOriginに記載された種別と一致する場合のみライセンス種別を上書きする。
             // これにより、バージョンアップでライセンスが変更になっている場合に検出することが可能。
             licenseType = knownLicensesData.licenses
+            copyright = !!knownLicensesData.copyright ? knownLicensesData.copyright : copyright
         }
-        let copyright = inputLicensesData.copyright
-        // ライセンスファイルのスペルが2種類存在するので、両方とも処理対象に含める。
-        let licenseText = inputLicensesData.licenseFile.match(/LICENSE/ig) || inputLicensesData.licenseFile.match(/LICENCE/ig) ? inputLicensesData.licenseText : null
         switch (licenseType) {
             case 'MIT':
             case 'Apache-2.0':
@@ -200,6 +201,7 @@ try {
             case 'BSD-3-Clause':
                 if (!licenseText) {
                     // 著作権情報が存在する場合はテンプレートと合成しライセンス条文を生成する。
+                    // ただし、ライセンス条文が用意されている場合はそちらを優先する。
                     if (!!copyright) {
                         licenseText = generateLicenseText(licenseTemplateTextDictionary[licenseType], copyright)
                     } else {
