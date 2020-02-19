@@ -224,6 +224,7 @@ try {
                     errorCount++
                     continue
                 }
+                break
             default:
                 outputLicenseError(inputLicensesKey, licenseType)
                 errorCount++
