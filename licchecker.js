@@ -253,9 +253,9 @@ try {
         for (newLicensesKey in newLicensesDictionary) {
             newLicensesList.push(newLicensesDictionary[newLicensesKey])
         }
-        fs.writeFileSync(outputFile, JSON.stringify(newLicensesList));
+        fs.writeFileSync(outputFile, JSON.stringify(newLicensesList, null, 2).replace(/\n/g, "\r\n"));
     } else {
-        fs.writeFileSync(outputFile, JSON.stringify(newLicensesDictionary));
+        fs.writeFileSync(outputFile, JSON.stringify(newLicensesDictionary, null, 2).replace(/\n/g, "\r\n"));
     }
     if (errorCount > 0) {
         outputConsoleWarning(`\r\n${errorCount}個の要確認事項が見つかりましたが、強制的にファイル出力を行いました。確認が必要なものは出力対象に含まれません。`)
