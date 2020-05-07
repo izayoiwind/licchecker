@@ -178,7 +178,7 @@ try {
         const version = inputLicensesData.version
         const inputDataLicenseType = inputLicensesData.licenses
         let copyright = inputLicensesData.copyright
-        let licenseType = inputLicensesData.licenses
+        let licenseType = Array.isArray(inputLicensesData.licenses) ? inputLicensesData.licenses.join(',') : inputLicensesData.licenses
         // ライセンスファイルのスペルが2種類存在するので、両方とも処理対象に含める。
         let licenseText = inputLicensesData.licenseFile.match(/LICENSE/ig) || inputLicensesData.licenseFile.match(/LICENCE/ig) ? inputLicensesData.licenseText : null
         // 既知ライセンス情報が存在する場合は取得する。
