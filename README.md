@@ -61,7 +61,7 @@ licenses.jsonに著作権表記が含まれていない等、警告が出る場�
 {
     "ライブラリ名（licenses.jsonのnameに記載されるもの ※1）": {
         "licenses": "ライセンス種別 ※2",
-        "licensesOrigin": "licenses.jsonに記載のライセンス種別",
+        "licensesOrigin": "licenses.jsonに記載のライセンス種別 ※3",
         "copyright": "著作権情報",
         "ignore": 出力対象としない場合はtrue、それ以外は定義しないまたはfalse,
         "licenseText": "ライセンス条文"
@@ -71,6 +71,8 @@ licenses.jsonに著作権表記が含まれていない等、警告が出る場�
 ※1 同一ライブラリのバージョン違いが含まれ、ライセンスが異なる場合は、アンダースコアとlicensesOriginの内容を付与することが可能です。この場合、当該ライブラリの記述全てに対して同様の指定を行ってください。例：library_MIT
 
 ※2 MIT、Apache-2.0、ISC、BSD-2-Clause、BSD-3-Clauseのいずれかを指定することで、licenses.jsonとの表記揺れを吸収できます。それ以外のライセンスの場合はKNOWN_LICENSEと指定します。KNOWN_LICENSEを指定した場合、条文が必要であればlicenseTextを指定してください。ただし、パブリックドメイン等、ライブラリを使用しているという明示が必要ないものであれば、"ignore": trueを指定することで、最終的に生成されるライセンス情報に掲載されないようにすることができます。この場合は、条文の定義は不要です。
+
+※3 licenses.jsonのライセンス種別が配列で記載されている場合は、カンマ区切りで記載します。例：MIT,BSD
 
 ライセンス
 ---
